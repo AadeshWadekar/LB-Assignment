@@ -1,0 +1,51 @@
+#include<stdio.h>
+
+#define TRUE  1
+#define FALSE  0
+
+typedef int BOOL;
+
+BOOL ChkZero(int iNo)
+{
+    int iDigit = 0;
+    if(iNo < iNo)
+    {
+        iNo = -iNo;
+    }
+
+    while(iNo != 0)
+    {
+        iDigit = iNo % 10;
+        if(iDigit == 0)
+        {
+            return TRUE;
+        }
+        iNo = iNo/ 10;
+
+    }
+    return FALSE;
+
+    
+}
+int main()
+{
+    int iValue = 0;
+    BOOL bRet = FALSE;
+
+    printf("Enter Number : \n");
+    scanf("%d",&iValue);
+
+    bRet = ChkZero(iValue);
+
+    if(bRet == TRUE)
+    {
+        printf("It Contain Zero \n ");
+    }
+    else    
+    {
+        printf("There Is No Zero \n");
+    }
+
+
+    return 0;
+}
